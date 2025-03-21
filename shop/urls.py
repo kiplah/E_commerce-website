@@ -23,7 +23,8 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('store.urls')),
-     path('logout/', auth_views.LogoutView.as_view(next_page='home'), name='logout'),
+    path('logout/', auth_views.LogoutView.as_view(next_page='home'), name='logout'),
+    path('accounts/', include('django.contrib.auth.urls')), 
 ]
 
 if settings.DEBUG:

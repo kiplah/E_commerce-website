@@ -42,3 +42,7 @@ def remove_from_cart(request, cart_id):
     cart_item = get_object_or_404(Cart, id=cart_id, user=request.user)
     cart_item.delete()
     return redirect('cart')
+from django.shortcuts import render
+
+def custom_login_view(request):
+    return render(request, 'store/login.html')
